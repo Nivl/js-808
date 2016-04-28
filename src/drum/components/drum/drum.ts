@@ -51,104 +51,10 @@ export default class DrumComponent {
   }
 
   useSequenceOne() {
+    const sequenceOne = require('../../sequences/one.json').sequence;
+    console.log(sequenceOne);
+
     this.currentSequence = new Sequence();
-    this.currentSequence.setSteps([
-      {
-        kick: { isEnabled: true, },
-        snare: { },
-        hhOpen: { },
-        hhClose: { isEnabled: true, },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { isEnabled: true, },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      },
-      {
-        kick: { isEnabled: true, },
-        snare: { isEnabled: true, },
-        hhOpen: { },
-        hhClose: { isEnabled: true, },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { isEnabled: true, },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      },
-      {
-        kick: { isEnabled: true, },
-        snare: { },
-        hhOpen: { },
-        hhClose: { isEnabled: true, },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { isEnabled: true, },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      },
-      {
-        kick: { isEnabled: true, },
-        snare: { isEnabled: true, },
-        hhOpen: { },
-        hhClose: { isEnabled: true, },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { isEnabled: true, },
-        hhClose: { },
-      },
-      {
-        kick: { },
-        snare: { },
-        hhOpen: { },
-        hhClose: { },
-      }
-    ]);
+    this.currentSequence.setSteps(sequenceOne);
   }
 }

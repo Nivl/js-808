@@ -24,6 +24,7 @@ const conf = {
     loaders: [
       { test  : /\.ts$/, loader: 'ts-loader' },
       { test: /\.html$/, loader: 'html-loader' },
+      { test: /\.json$/, loader: 'json-loader' },
       { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpg' },
       { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
       { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/font-woff" },
