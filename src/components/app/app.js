@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
+var drum_1 = require('../drum/drum');
 require('./app.scss');
 var AppComponent = (function () {
     function AppComponent() {
@@ -17,6 +18,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             template: require('./app.html'),
+            directives: [drum_1.default],
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
