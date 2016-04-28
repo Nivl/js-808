@@ -2,7 +2,7 @@ import { INote, INoteOptions } from './inote';
 
 class Note implements INoteOptions {
   isEnabled: boolean = false;
-  velocity: Number = 1;
+  velocity: number = 1;
 
   constructor(data: INoteOptions) {
     this.isEnabled = data.isEnabled || false;
@@ -11,17 +11,17 @@ class Note implements INoteOptions {
 }
 
 export class Kick extends Note implements INote {
-  sound: String = 'kick.wav';
+  sound: string = 'kick.wav';
 }
 
 export class Snare extends Note implements INote {
-  sound: String = 'snare.wav';
+  sound: string = 'snare.wav';
 }
 
 export class HhOpen extends Note implements INote {
-  sound: String = 'hh_open.wav';
+  sound: string = 'hh_open.wav';
 }
 
 export class HhClose extends Note implements INote {
-  sound: String = 'hh_close.wav';
+  sound: string = 'hh_close.wav';
 }

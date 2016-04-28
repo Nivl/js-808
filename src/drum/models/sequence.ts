@@ -4,7 +4,7 @@ export default class Sequence {
   bpm: Number = 60;
   steps: Step[] = [];
 
-  constructor(bpm: Number = 60) {
+  constructor(bpm: number = 60) {
     this.bpm = bpm;
   }
 

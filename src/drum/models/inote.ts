@@ -1,10 +1,10 @@
 export interface INoteOptions {
   isEnabled?: boolean;
-  velocity?: Number;
+  velocity?: number;
 }
 
 export interface INote {
-  sound: String;
+  sound: string;
   isEnabled: boolean;
-  velocity: Number;
+  velocity: number;
 }

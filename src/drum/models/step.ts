@@ -9,6 +9,7 @@ export interface IStepOptions {
 }
 
 export class Step {
+  isPlaying: boolean = false;
   kick: Kick;
   snare: Snare;
   hhOpen: HhOpen;
