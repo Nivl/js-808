@@ -2,6 +2,10 @@
 ml-drum {
   .collumn {
     display: inline-block;
+
+    &:nth-child(4n) {
+      margin-right: 3px;
+    }
   }
 
   .beat {
