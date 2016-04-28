@@ -1,1 +1,11 @@
-DRUM
+
+<div class="wrapper">
+
+  <div *ngFor="#step of currentSequence.steps" class="collumn">
+    <div [ngClass]="{active: step.kick.isEnabled}" class="beat kick"></div>
+    <div [ngClass]="{active: step.snare.isEnabled}" class="beat snare"></div>
+    <div [ngClass]="{active: step.hhOpen.isEnabled}" class="beat hhOpen"></div>
+    <div [ngClass]="{active: step.hhClose.isEnabled}" class="beat hhClose"></div>
+  </div>
+
+</div>
