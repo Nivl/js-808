@@ -2,26 +2,38 @@
   "name": "js-808",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "typings": "typings"
+    "typings": "typings",
+    "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --colors"
   },
-  "license": "ISC",
   "dependencies": {
     "angular2": "2.0.0-beta.16",
-    "systemjs": "0.19.26",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "0.6.12"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.9",
     "concurrently": "^2.0.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.16.0",
     "lite-server": "^2.2.0",
+    "node-sass": "^3.6.0",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
-    "typings":"^0.8.1"
+    "typings": "^0.8.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }
