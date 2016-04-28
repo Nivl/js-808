@@ -12,7 +12,7 @@ const PROD = (process.env.NODE_ENV && process.env.NODE_ENV === 'production');
 
 const conf = {
   devtool: 'source-map',
-  entry  : [`es6-shim/es6-shim.js`, `angular2/bundles/angular2-polyfills`, `${__dirname}/src/main.ts`],
+  entry  : [`es6-shim/es6-shim.js`, `angular2/bundles/angular2-polyfills`, `${__dirname}/src/index.ts`],
   output : {
     path    : `${__dirname}/dist`,
     filename: '[name].bundle.[hash].js',
