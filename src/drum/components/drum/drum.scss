@@ -1,4 +1,10 @@
 
+$defaultColor: #5b6167;
+$kickColor: #24b79b;
+$snareColor: #e13563;
+$hhOpenColor: #f7c140;
+$hhCloseColor: #ee5a4b;
+
 ml-drum {
   .collumn {
     display: inline-block;
@@ -13,22 +19,29 @@ ml-drum {
     height: 36px;
     margin: 2px;
     border-radius: 2px;
-    background-color: #5b6167;
+    background-color: $defaultColor;
+    transition: background-color 0.1s linear;
 
     &.kick.active {
-      background-color: #24b79b;
+      background-color: $kickColor;
     }
 
     &.snare.active {
-      background-color: #e13563;
+      background-color: $snareColor;
     }
 
     &.hhOpen.active {
-      background-color: #f7c140;
+      background-color: $hhOpenColor;
     }
 
     &.hhClose.active {
-      background-color: #ee5a4b;
+      background-color: $hhCloseColor;
+    }
+  }
+
+  .isPlaying {
+    .beat.active {
+      background-color: white;
     }
   }
 }

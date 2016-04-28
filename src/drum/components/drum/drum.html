@@ -1,10 +1,10 @@
 
-<i class="fa fa-play"></i>
-<i class="fa fa-stop"></i>
+<i (click)="play()" class="fa fa-play"></i>
+<i (click)="stop()" class="fa fa-stop"></i>
 
 <div class="wrapper">
 
-  <div *ngFor="#step of currentSequence.steps" class="collumn">
+  <div *ngFor="#step of currentSequence.steps" [ngClass]="{isPlaying: step.isPlaying}" class="collumn">
     <div [ngClass]="{active: step.kick.isEnabled}" class="beat kick"></div>
     <div [ngClass]="{active: step.snare.isEnabled}" class="beat snare"></div>
     <div [ngClass]="{active: step.hhOpen.isEnabled}" class="beat hhOpen"></div>
