@@ -29,7 +29,6 @@ export default class DrumComponent {
         return ;
       }
 
-      console.log('start');
       this.isPlaying = true;
       this.playNext(0);
     }
@@ -37,8 +36,6 @@ export default class DrumComponent {
 
   private playNext(i) {
     if (this.isPlaying) {
-      console.log(this.currentSequence.bpm, typeof this.currentSequence.bpm);
-
       const waitTime = ((60 / ~~this.currentSequence.bpm) / 4) * 1000;
       this.currentSequence.steps[i].isPlaying = true;
 
