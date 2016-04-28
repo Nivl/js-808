@@ -23,7 +23,7 @@ const conf = {
   module: {
     loaders: [
       { test  : /\.ts$/, loader: 'ts-loader' },
-      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.html$/, loader: 'html-loader' },
       { test: /\.jpg$/, loader: 'url-loader?mimetype=image/jpg' },
       { test: /\.png$/, loader: 'url-loader?mimetype=image/png' },
     ],
