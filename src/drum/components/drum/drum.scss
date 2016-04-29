@@ -40,6 +40,10 @@ ml-drum {
   }
 
   .isPlaying {
+    .beat {
+      background-color: #787e84;
+    }
+
     .beat.active {
       background-color: white;
     }
