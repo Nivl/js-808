@@ -4,6 +4,7 @@ export default class Sequence {
   bpm: number = 60;
   steps: Step[] = [];
   isPlaying: boolean = false;
+  currentStep: number = -1;
 
   constructor(bpm: number = 60) {
     this.bpm = bpm;
@@ -24,24 +25,44 @@ export default class Sequence {
   play() {
     if (this.isPlaying === false && this.isValid()) {
       this.isPlaying = true;
-      this.playNext(0);
+      // We clean the UI to clear the Pause mark
+      this.cleanStepUI();
+      // We bump the step to avoid replaying the same beat on pause/play
+      this.bumpCurrentStep();
+      this.playNextStep();
     }
   }
 
   stop() {
     this.isPlaying = false;
+    this.cleanStepUI();
+    this.currentStep = -1;
   }
 
-  private playNext(i) {
-    if (this.isPlaying) {
-      const waitTime = ((60 / this.bpm) / 4) * 1000;
-      this.steps[i].play();
+  pause() {
+    this.isPlaying = false;
+  }
 
-      setTimeout(() => {
-        const nextIndex = (i + 1 === this.steps.length) ? (0) : (i + 1);
-        this.steps[i].isPlaying = false;
-        this.playNext(nextIndex);
-      }, waitTime);
+  private bumpCurrentStep() {
+    this.currentStep = (this.currentStep + 1 < this.steps.length) ? (this.currentStep + 1) : (0);
+  }
+
+  private cleanStepUI() {
+    if (this.currentStep >= 0 && this.currentStep < this.steps.length) {
+      this.steps[this.currentStep].isPlaying = false;
     }
+  }
+
+  private playNextStep() {
+    const waitTime = ((60 / this.bpm) / 4) * 1000;
+    this.steps[this.currentStep].play();
+
+    setTimeout(() => {
+      if (this.isPlaying) {
+        this.cleanStepUI();
+        this.bumpCurrentStep();
+        this.playNextStep();
+      }
+    }, waitTime);
   }
 }

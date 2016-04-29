@@ -40,6 +40,12 @@ export default class DrumComponent {
     }
   }
 
+  pause() {
+    if (this.currentSequence) {
+      this.currentSequence.pause();
+    }
+  }
+
   play() {
     if (this.currentSequence) {
       this.currentSequence.play();
