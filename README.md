@@ -1,3 +1,9 @@
+
+    npm install -g typescript typings
+    npm install
+    npm run serve
+    # the dev server is now running on http://127.0.0.1:8080
+
 # JS-808 Practice exercise
 
 The goal of this exercise is to practice designing models and
