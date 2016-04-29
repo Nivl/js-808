@@ -22,26 +22,46 @@ ml-drum {
     background-color: $defaultColor;
     transition: background-color 0.1s linear;
 
+    &:hover {
+      background-color: lighten( $defaultColor, 15% )
+    }
+
     &.kick.active {
       background-color: $kickColor;
+
+      &:hover {
+        background-color: darken( $kickColor, 15% )
+      }
     }
 
     &.snare.active {
       background-color: $snareColor;
+
+      &:hover {
+        background-color: darken( $snareColor, 15% )
+      }
     }
 
     &.hhOpen.active {
       background-color: $hhOpenColor;
+
+      &:hover {
+        background-color: darken( $hhOpenColor, 15% )
+      }
     }
 
     &.hhClose.active {
       background-color: $hhCloseColor;
+
+      &:hover {
+        background-color: darken( $hhCloseColor, 15% )
+      }
     }
   }
 
   .isPlaying {
     .beat {
-      background-color: #787e84;
+      background-color: lighten( $defaultColor, 10% );
     }
 
     .beat.active {

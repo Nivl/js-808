@@ -11,10 +11,10 @@
 <div class="wrapper">
 
   <div *ngFor="#step of currentSequence.steps" [ngClass]="{isPlaying: step.isPlaying}" class="collumn">
-    <div [ngClass]="{active: step.kick.isEnabled}" class="beat kick"></div>
-    <div [ngClass]="{active: step.snare.isEnabled}" class="beat snare"></div>
-    <div [ngClass]="{active: step.hhOpen.isEnabled}" class="beat hhOpen"></div>
-    <div [ngClass]="{active: step.hhClose.isEnabled}" class="beat hhClose"></div>
+    <div (click)="step.kick.toggle()" [ngClass]="{active: step.kick.isEnabled}" class="beat kick"></div>
+    <div (click)="step.snare.toggle()" [ngClass]="{active: step.snare.isEnabled}" class="beat snare"></div>
+    <div (click)="step.hhOpen.toggle()" [ngClass]="{active: step.hhOpen.isEnabled}" class="beat hhOpen"></div>
+    <div (click)="step.hhClose.toggle()" [ngClass]="{active: step.hhClose.isEnabled}" class="beat hhClose"></div>
   </div>
 
 </div>

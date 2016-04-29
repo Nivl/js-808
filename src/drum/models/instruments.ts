@@ -20,6 +20,10 @@ class Note implements INoteOptions {
       }).play();
     }
   }
+
+  toggle() {
+    this.isEnabled = !this.isEnabled;
+  }
 }
 
 export class Kick extends Note implements INote {
