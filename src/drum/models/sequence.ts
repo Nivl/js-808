@@ -18,6 +18,25 @@ export default class Sequence {
     }
   }
 
+  addEmptySteps() {
+    const emptyStep = {
+      kick: {},
+      snare: {},
+      hhOpen: {},
+      hhClose: {},
+    };
+
+    for (let i = 0; i < 4; i++) {
+      this.steps.push(new Step(emptyStep));
+    }
+  }
+
+  removeSteps() {
+    if (this.steps.length > 4) {
+      this.steps.splice(-4);
+    }
+  }
+
   isValid(): boolean {
     return ((this.steps.length) > 0 && (this.steps.length % 4 === 0));
   }

@@ -18,6 +18,14 @@ export default class DrumComponent {
     this.switchSequence('one');
   }
 
+  addSteps() {
+    this.currentSequence.addEmptySteps();
+  }
+
+  removeSteps() {
+    this.currentSequence.removeSteps();
+  }
+
   updateBpm(value: number) {
     if (value >= 60 && value <= 240) {
       this.currentSequence.bpm = value;

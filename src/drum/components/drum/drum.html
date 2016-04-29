@@ -1,13 +1,22 @@
 
-<i (click)="play()" class="fa fa-play"></i>
-<i (click)="stop()" class="fa fa-stop"></i>
-<i (click)="pause()" class="fa fa-pause"></i>
+<p>
+  <i (click)="play()" class="fa fa-play"></i>
+  <i (click)="stop()" class="fa fa-stop"></i>
+  <i (click)="pause()" class="fa fa-pause"></i>
+</p>
 
-<input type="number" (change)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentSequence.bpm }}" />
+<p>
+  <i (click)="addSteps()" class="fa fa-plus"></i>
+  <i (click)="removeSteps()" class="fa fa-minus"></i>
+</p>
 
-<select (change)="switchSequence($event.target.value)">
+<form>
+  <input type="number" (change)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentSequence.bpm }}" />
+
+  <select (change)="switchSequence($event.target.value)">
     <option *ngFor="#num of sequenceList">{{ num }}</option>
-</select>
+  </select>
+</form>
 
 <div class="wrapper">
 
