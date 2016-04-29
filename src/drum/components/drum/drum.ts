@@ -18,8 +18,6 @@ export default class DrumComponent {
   }
 
   updateBpm(value: number) {
-    console.log(value);
-
     if (value >= 60 && value <= 240) {
       this.currentSequence.bpm = value;
     }
@@ -41,8 +39,6 @@ export default class DrumComponent {
     this.stop();
 
     const sequenceOne = require('../../sequences/one.json').sequence;
-    console.log(sequenceOne);
-
     this.currentSequence = new Sequence();
     this.currentSequence.setSteps(sequenceOne);
   }
