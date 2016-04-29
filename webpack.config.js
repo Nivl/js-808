@@ -52,8 +52,6 @@ if (PROD) {
   // loaders
   conf.module.loaders.push({ test: /\.scss$/, loaders: ['style?amp', 'css', 'sass'] });
   conf.module.loaders.push({ test: /\.css$/, loaders: ['style?amp', 'css'] });
-  // plugins
-  conf.plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
 } else {
   // loaders
   conf.module.loaders.push({
