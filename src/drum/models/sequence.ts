@@ -1,7 +1,7 @@
 import {Step, IStepOptions} from './step';
 
 export default class Sequence {
-  bpm: Number = 60;
+  bpm: number = 60;
   steps: Step[] = [];
   isPlaying: boolean = false;
 
@@ -34,7 +34,7 @@ export default class Sequence {
 
   private playNext(i) {
     if (this.isPlaying) {
-      const waitTime = ((60 / ~~this.bpm) / 4) * 1000;
+      const waitTime = ((60 / this.bpm) / 4) * 1000;
       this.steps[i].play();
 
       setTimeout(() => {
