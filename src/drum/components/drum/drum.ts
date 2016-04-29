@@ -12,14 +12,25 @@ import './drum.scss';
 })
 export default class DrumComponent {
   currentSequence: Sequence;
+  sequenceList: string[] = ['one', 'two', 'three'];
 
   constructor() {
-    this.useSequenceOne();
+    this.switchSequence('one');
   }
 
   updateBpm(value: number) {
     if (value >= 60 && value <= 240) {
       this.currentSequence.bpm = value;
+    }
+  }
+
+  switchSequence(num: string) {
+    if (this.sequenceList.indexOf(num) > -1) {
+      this.stop();
+
+      const sequenceOne = require(`../../sequences/${num}.json`).sequence;
+      this.currentSequence = new Sequence();
+      this.currentSequence.setSteps(sequenceOne);
     }
   }
 
@@ -33,13 +44,5 @@ export default class DrumComponent {
     if (this.currentSequence) {
       this.currentSequence.play();
     }
-  }
-
-  useSequenceOne() {
-    this.stop();
-
-    const sequenceOne = require('../../sequences/one.json').sequence;
-    this.currentSequence = new Sequence();
-    this.currentSequence.setSteps(sequenceOne);
   }
 }

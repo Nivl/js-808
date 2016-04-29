@@ -2,9 +2,11 @@
 <i (click)="play()" class="fa fa-play"></i>
 <i (click)="stop()" class="fa fa-stop"></i>
 
-<form>
-  <input type="number" (blur)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentSequence.bpm }}" />
-</form>
+<input type="number" (blur)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentSequence.bpm }}" />
+
+<select (change)="switchSequence($event.target.value)">
+    <option *ngFor="#num of sequenceList">{{ num }}</option>
+</select>
 
 <div class="wrapper">
 
