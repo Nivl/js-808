@@ -12,10 +12,17 @@ import './drum.scss';
 })
 export default class DrumComponent {
   currentSequence: Sequence;
-  isPlaying: boolean = false;
 
   constructor() {
     this.useSequenceOne();
+  }
+
+  updateBpm(value: number) {
+    console.log(value);
+
+    if (value >= 60 && value <= 240) {
+      this.currentSequence.bpm = value;
+    }
   }
 
   stop() {

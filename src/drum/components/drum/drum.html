@@ -2,6 +2,10 @@
 <i (click)="play()" class="fa fa-play"></i>
 <i (click)="stop()" class="fa fa-stop"></i>
 
+<form>
+  <input type="number" (blur)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentSequence.bpm }}" />
+</form>
+
 <div class="wrapper">
 
   <div *ngFor="#step of currentSequence.steps" [ngClass]="{isPlaying: step.isPlaying}" class="collumn">
