@@ -26,14 +26,21 @@ export default class Sequence {
       hhClose: {},
     };
 
-    for (let i = 0; i < 4; i++) {
-      this.steps.push(new Step(emptyStep));
+    if (this.steps.length / 4 < 32) {
+      console.log(`adding ${this.steps.length / 4}(${this.steps.length}) more steps`);
+
+      const numberToAdd = this.steps.length;
+
+      for (let i = 0; i < numberToAdd; i++) {
+        console.log(i);
+        this.steps.push(new Step(emptyStep));
+      }
     }
   }
 
   removeSteps() {
-    if (this.steps.length > 4) {
-      this.steps.splice(-4);
+    if (this.steps.length / 4 > 4) {
+      this.steps.splice(-(this.steps.length/2));
     }
   }
 
