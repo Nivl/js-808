@@ -19,35 +19,20 @@ export default class DrumComponent {
   }
 
   stop() {
-    this.isPlaying = false;
-  }
-
-  play() {
-    if (this.isPlaying === false) {
-      if (this.currentSequence.steps.length === 0 || this.currentSequence.steps.length % 4) {
-        console.error('Sequence not valid');
-        return ;
-      }
-
-      this.isPlaying = true;
-      this.playNext(0);
+    if (this.currentSequence) {
+      this.currentSequence.stop();
     }
   }
 
-  private playNext(i) {
-    if (this.isPlaying) {
-      const waitTime = ((60 / ~~this.currentSequence.bpm) / 4) * 1000;
-      this.currentSequence.steps[i].isPlaying = true;
-
-      setTimeout(() => {
-        const nextIndex = (i + 1 === this.currentSequence.steps.length) ? (0) : (i + 1);
-        this.currentSequence.steps[i].isPlaying = false;
-        this.playNext(nextIndex);
-      }, waitTime);
+  play() {
+    if (this.currentSequence) {
+      this.currentSequence.play();
     }
   }
 
   useSequenceOne() {
+    this.stop();
+
     const sequenceOne = require('../../sequences/one.json').sequence;
     console.log(sequenceOne);
 

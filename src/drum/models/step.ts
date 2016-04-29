@@ -21,4 +21,12 @@ export class Step {
     this.hhOpen = new HhOpen(data.hhOpen);
     this.hhClose = new HhClose(data.hhClose);
   }
+
+  play() {
+    this.isPlaying = true;
+    this.kick.play();
+    this.snare.play();
+    this.hhOpen.play();
+    this.hhClose.play();
+  }
 }
