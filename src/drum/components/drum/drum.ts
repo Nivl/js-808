@@ -15,6 +15,7 @@ import './drum.scss';
 })
 export default class DrumComponent {
   private drumService: DrumService;
+  currentBpm = 60; // used for display only
 
   get sequenceList(): string[] {
     return ['one', 'two', 'three'];
@@ -42,6 +43,10 @@ export default class DrumComponent {
 
   removeSteps() {
     this.drumService.removeSteps();
+  }
+
+  updateBpm(value: number) {
+    this.drumService.updateBpm(value);
   }
 
   switchSequence(num: string) {

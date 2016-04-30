@@ -11,6 +11,8 @@
 </p>
 
 <form>
+  <input type="number" (change)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentBpm }}" />
+
   <select (change)="switchSequence($event.target.value)">
     <option>Sequences</option>
     <option *ngFor="#num of sequenceList">{{ num }}</option>

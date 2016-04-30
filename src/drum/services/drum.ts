@@ -9,6 +9,7 @@ export default class DrumService {
   private _addSteps: EventEmitter<boolean> = new EventEmitter();
   private _removeSteps: EventEmitter<boolean> = new EventEmitter();
   private _switchSequence: EventEmitter<IStepOptions[]> = new EventEmitter();
+  private _updateBpm: EventEmitter<number> = new EventEmitter();
 
   play() {
     this._play.emit(true);
@@ -56,5 +57,13 @@ export default class DrumService {
 
   onSwitchSequence(callback) {
     this._switchSequence.subscribe(callback);
+  }
+
+  updateBpm(value: number) {
+    this._updateBpm.emit(value);
+  }
+
+  onUpdateBpm(callback) {
+    this._updateBpm.subscribe(callback);
   }
 }

@@ -26,6 +26,7 @@ export default class SequenceComponent {
     drumService.onAddSteps(this.addSteps.bind(this));
     drumService.onRemoveSteps(this.removeSteps.bind(this));
     drumService.onSwitchSequence(this.switchSequence.bind(this));
+    drumService.onUpdateBpm(this.updateBpm.bind(this));
   }
 
   addSteps() {

@@ -1,8 +1,4 @@
 
-<form>
-  <input type="number" (change)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentSequence.bpm }}" />
-</form>
-
 <div class="wrapper">
 
   <div *ngFor="#step of currentSequence.steps" [ngClass]="{isPlaying: step.isPlaying}" class="collumn">
