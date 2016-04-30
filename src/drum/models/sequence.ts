@@ -28,21 +28,12 @@ export default class Sequence {
   }
 
   addEmptySteps() {
-    const emptyStep = {
-      kick: {},
-      snare: {},
-      hhOpen: {},
-      hhClose: {},
-    };
-
     if (this.steps.length / 4 < this.maxNumberOfSteps) {
-      console.log(`adding ${this.steps.length / 4}(${this.steps.length}) more steps`);
-
       const numberToAdd = this.steps.length;
 
       for (let i = 0; i < numberToAdd; i++) {
         console.log(i);
-        this.steps.push(new Step(emptyStep));
+        this.steps.push(new Step());
       }
     }
   }
