@@ -18,7 +18,7 @@ export default class DrumComponent {
   currentBpm = 60; // used for display only
 
   get sequenceList(): string[] {
-    return ['one', 'two', 'three'];
+    return ['one', 'two', 'three', 'romy-grap'];
   }
 
   constructor(drumService: DrumService) {

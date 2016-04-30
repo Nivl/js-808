@@ -1,0 +1,109 @@
+{
+  "sequence": [
+    {
+      "kick": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    { },
+    {
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    { },
+    {
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true }
+    },
+    {
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true }
+    },
+    {
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "snare": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    { },
+    {
+      "kick": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    { },
+    {
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    { },
+    {
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true }
+    },
+    {
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true }
+    },
+    {
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    },
+    {
+      "snare": { "isEnabled": true }
+    },
+    {
+      "kick": { "isEnabled": true },
+      "snare": { "isEnabled": true },
+      "hhClose": { "isEnabled": true }
+    }
+  ]
+}
