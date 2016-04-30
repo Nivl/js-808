@@ -6,7 +6,7 @@ class Note implements INoteOptions {
   isEnabled: boolean = false;
   velocity: number = 1;
 
-  constructor(data: INoteOptions) {
+  constructor(data: INoteOptions = {}) {
     this.isEnabled = data.isEnabled || false;
     this.velocity = data.velocity || 1;
   }
