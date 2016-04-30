@@ -15,6 +15,7 @@ import './drum.scss';
 })
 export default class DrumComponent {
   private drumService: DrumService;
+  isPlaying = false; // used for display only
   currentBpm = 60; // used for display only
 
   get sequenceList(): string[] {
@@ -26,15 +27,18 @@ export default class DrumComponent {
   }
 
   stop() {
+    this.isPlaying = false;
     this.drumService.stop();
   }
 
   pause() {
-      this.drumService.pause();
+    this.isPlaying = false;
+    this.drumService.pause();
   }
 
   play() {
-      this.drumService.play();
+    this.isPlaying = true;
+    this.drumService.play();
   }
 
   addSteps() {
