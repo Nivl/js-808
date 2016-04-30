@@ -48,7 +48,7 @@ export default class Sequence {
     const toCheck: IStepOptions[] = steps || this.steps;
 
     return (
-      (toCheck.length > 4 * 4) &&
+      (toCheck.length >= 4 * 4) &&
       (toCheck.length / 4 <= this.maxNumberOfSteps) &&
       (toCheck.length % 4 === 0)
     );
