@@ -2,7 +2,6 @@ import {Component} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 
 import DrumService from '../../services/drum';
-
 import SequenceComponent from '../sequence/sequence';
 
 import './drum.scss';
