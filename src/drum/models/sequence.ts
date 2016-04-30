@@ -4,17 +4,26 @@ export default class Sequence {
   bpm: number = 60;
   steps: Step[] = [];
   isPlaying: boolean = false;
-  currentStep: number = -1;
+  private currentStep: number = -1;
+  private maxNumberOfSteps: number = 32;
 
-  constructor(bpm: number = 60) {
-    this.bpm = bpm;
-  }
-
-  setSteps(steps: IStepOptions[]) {
-    this.steps = [];
-
-    for (let elem of steps) {
-      this.steps.push(new Step(elem));
+  /**
+   * Create a new Sequence.
+   * @param  [IStepOptions[]]  steps Steps of the sequence
+   *                                 Default to 4 * 4 if not provided
+   *                                 Throw an error if the sequence is not valid
+   */
+  constructor(steps: IStepOptions[] = []) {
+    if (steps.length === 0) {
+      for (let i = 0; i < 4 * 4; i++) {
+        this.steps.push(new Step());
+      }
+    } else if (this.isValid(steps)) {
+      for (let elem of steps) {
+        this.steps.push(new Step(elem));
+      }
+    } else {
+      throw new Error('The sequence provided has the wrong format');
     }
   }
 
@@ -26,7 +35,7 @@ export default class Sequence {
       hhClose: {},
     };
 
-    if (this.steps.length / 4 < 32) {
+    if (this.steps.length / 4 < this.maxNumberOfSteps) {
       console.log(`adding ${this.steps.length / 4}(${this.steps.length}) more steps`);
 
       const numberToAdd = this.steps.length;
@@ -44,8 +53,14 @@ export default class Sequence {
     }
   }
 
-  isValid(): boolean {
-    return ((this.steps.length) > 0 && (this.steps.length % 4 === 0));
+  isValid(steps: IStepOptions[] = null): boolean {
+    const toCheck: IStepOptions[] = steps || this.steps;
+
+    return (
+      (toCheck.length > 4 * 4) &&
+      (toCheck.length / 4 <= this.maxNumberOfSteps) &&
+      (toCheck.length % 4 === 0)
+    );
   }
 
   play() {

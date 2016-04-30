@@ -37,8 +37,7 @@ export default class DrumComponent {
       this.stop();
 
       const sequenceOne = require(`../../sequences/${num}.json`).sequence;
-      this.currentSequence = new Sequence();
-      this.currentSequence.setSteps(sequenceOne);
+      this.currentSequence = new Sequence(sequenceOne);
     }
   }
 
