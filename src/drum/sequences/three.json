@@ -2,98 +2,53 @@
   "sequence": [
     {
       "kick": { "isEnabled": true },
-      "snare": { },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     },
+    { },
     {
-      "kick": { },
-      "snare": { },
-      "hhOpen": { },
-      "hhClose": { }
-    },
-    {
-      "kick": { },
-      "snare": { },
       "hhOpen": { "isEnabled": true },
       "hhClose": { "isEnabled": true }
     },
     {
-      "kick": { },
-      "snare": { },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     },
     {
       "kick": { "isEnabled": true },
       "snare": { "isEnabled": true },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     },
+    { },
     {
-      "kick": { },
-      "snare": { },
-      "hhOpen": { },
-      "hhClose": { }
-    },
-    {
-      "kick": { },
-      "snare": { },
       "hhOpen": { "isEnabled": true },
       "hhClose": { "isEnabled": true }
     },
     {
-      "kick": { },
       "snare": { "isEnabled": true },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     },
     {
       "kick": { "isEnabled": true },
-      "snare": { },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     },
+    { },
     {
-      "kick": { },
-      "snare": { },
-      "hhOpen": { },
-      "hhClose": { }
-    },
-    {
-      "kick": { },
-      "snare": { },
       "hhOpen": { "isEnabled": true },
       "hhClose": { "isEnabled": true }
     },
     {
-      "kick": { },
-      "snare": { },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     },
     {
       "kick": { "isEnabled": true },
       "snare": { "isEnabled": true },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     },
+    { },
     {
-      "kick": { },
-      "snare": { },
-      "hhOpen": { },
-      "hhClose": { }
-    },
-    {
-      "kick": { },
-      "snare": { },
       "hhOpen": { "isEnabled": true },
       "hhClose": { "isEnabled": true }
     },
     {
-      "kick": { },
-      "snare": { },
-      "hhOpen": { },
       "hhClose": { "isEnabled": true }
     }
   ]
