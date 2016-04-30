@@ -10,4 +10,11 @@
   <i (click)="removeSteps()" class="fa fa-minus"></i>
 </p>
 
+<form>
+  <select (change)="switchSequence($event.target.value)">
+    <option>Sequences</option>
+    <option *ngFor="#num of sequenceList">{{ num }}</option>
+  </select>
+</form>
+
 <ml-drum-sequence></ml-drum-sequence>

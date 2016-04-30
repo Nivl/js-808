@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 
 import Sequence from '../../models/sequence';
+import { IStepOptions } from '../../models/step';
 import DrumService from '../../services/drum';
 
 import './sequence.scss';
@@ -12,55 +13,46 @@ import './sequence.scss';
     template: require('./sequence.html'),
 })
 export default class SequenceComponent {
-  currentSequence: Sequence;
-  sequenceList: string[] = ['one', 'two', 'three'];
+  private _currentSequence: Sequence = new Sequence();
+
+  get currentSequence(): Sequence {
+    return this._currentSequence;
+  }
 
   constructor(drumService: DrumService) {
-    this.switchSequence('one');
-
     drumService.onPlay(this.play.bind(this));
     drumService.onPause(this.pause.bind(this));
     drumService.onStop(this.stop.bind(this));
     drumService.onAddSteps(this.addSteps.bind(this));
     drumService.onRemoveSteps(this.removeSteps.bind(this));
+    drumService.onSwitchSequence(this.switchSequence.bind(this));
   }
 
   addSteps() {
-    this.currentSequence.addEmptySteps();
+    this._currentSequence.addEmptySteps();
   }
 
   removeSteps() {
-    this.currentSequence.removeSteps();
+    this._currentSequence.removeSteps();
   }
 
   updateBpm(value: number) {
-    this.currentSequence.bpm = value;
+    this._currentSequence.bpm = value;
   }
 
-  switchSequence(num: string) {
-    if (this.sequenceList.indexOf(num) > -1) {
-      this.stop();
-
-      const sequenceOne = require(`../../sequences/${num}.json`).sequence;
-      this.currentSequence = new Sequence(sequenceOne);
-    }
+  switchSequence(sequence: IStepOptions[]) {
+    this._currentSequence = new Sequence(sequence);
   }
 
   stop() {
-    if (this.currentSequence) {
-      this.currentSequence.stop();
-    }
+    this._currentSequence.stop();
   }
 
   pause() {
-    if (this.currentSequence) {
-      this.currentSequence.pause();
-    }
+    this.currentSequence.pause();
   }
 
   play() {
-    if (this.currentSequence) {
-      this.currentSequence.play();
-    }
+    this.currentSequence.play();
   }
 }

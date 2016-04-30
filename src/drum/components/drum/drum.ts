@@ -16,6 +16,10 @@ import './drum.scss';
 export default class DrumComponent {
   private drumService: DrumService;
 
+  get sequenceList(): string[] {
+    return ['one', 'two', 'three'];
+  }
+
   constructor(drumService: DrumService) {
     this.drumService = drumService;
   }
@@ -38,5 +42,14 @@ export default class DrumComponent {
 
   removeSteps() {
     this.drumService.removeSteps();
+  }
+
+  switchSequence(num: string) {
+    if (this.sequenceList.indexOf(num) > -1) {
+      this.stop();
+
+      const sequence = require(`../../sequences/${num}.json`).sequence;
+      this.drumService.switchSequence(sequence);
+    }
   }
 }
