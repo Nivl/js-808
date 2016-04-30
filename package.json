@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js",
-    "lite": "lite-server",
-    "postinstall": "typings install",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings",
-    "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --colors"
+    "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --colors",
+    "test": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack-test.config.js",
+    "postinstall": "./node_modules/typings/dist/bin.js install"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.16",
@@ -28,7 +25,8 @@
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.16.0",
-    "lite-server": "^2.2.0",
+    "jasmine-core": "2.4.1",
+    "jasmine-webpack-plugin": "^0.1.1",
     "node-sass": "^3.6.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
