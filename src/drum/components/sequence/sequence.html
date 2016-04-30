@@ -1,9 +1,4 @@
 
-<p>
-  <i (click)="addSteps()" class="fa fa-plus"></i>
-  <i (click)="removeSteps()" class="fa fa-minus"></i>
-</p>
-
 <form>
   <input type="number" (change)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentSequence.bpm }}" />
 

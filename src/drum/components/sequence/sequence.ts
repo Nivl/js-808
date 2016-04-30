@@ -21,6 +21,8 @@ export default class SequenceComponent {
     drumService.onPlay(this.play.bind(this));
     drumService.onPause(this.pause.bind(this));
     drumService.onStop(this.stop.bind(this));
+    drumService.onAddSteps(this.addSteps.bind(this));
+    drumService.onRemoveSteps(this.removeSteps.bind(this));
   }
 
   addSteps() {

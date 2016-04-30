@@ -5,6 +5,8 @@ export default class DrumService {
   private _play: EventEmitter<boolean> = new EventEmitter();
   private _pause: EventEmitter<boolean> = new EventEmitter();
   private _stop: EventEmitter<boolean> = new EventEmitter();
+  private _addSteps: EventEmitter<boolean> = new EventEmitter();
+  private _removeSteps: EventEmitter<boolean> = new EventEmitter();
 
   play() {
     this._play.emit(true);
@@ -28,5 +30,21 @@ export default class DrumService {
 
   onStop(callback) {
     this._stop.subscribe(callback);
+  }
+
+  addSteps() {
+    this._addSteps.emit(true);
+  }
+
+  onAddSteps(callback) {
+    this._addSteps.subscribe(callback);
+  }
+
+  removeSteps() {
+    this._removeSteps.emit(true);
+  }
+
+  onRemoveSteps(callback) {
+    this._removeSteps.subscribe(callback);
   }
 }

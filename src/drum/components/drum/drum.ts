@@ -31,4 +31,12 @@ export default class DrumComponent {
   play() {
       this.drumService.play();
   }
+
+  addSteps() {
+    this.drumService.addSteps();
+  }
+
+  removeSteps() {
+    this.drumService.removeSteps();
+  }
 }
