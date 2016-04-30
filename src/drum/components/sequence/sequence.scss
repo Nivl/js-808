@@ -5,13 +5,14 @@ $snareColor: #e13563;
 $hhOpenColor: #f7c140;
 $hhCloseColor: #ee5a4b;
 
-ml-drum {
+ml-drum-sequence {
   .wrapper {
     max-width: 1310px;
   }
 
   .collumn {
     display: inline-block;
+    margin-bottom: 20px;
 
     &:nth-child(4n) {
       margin-right: 3px;
@@ -63,13 +64,23 @@ ml-drum {
     }
   }
 
+  .number {
+    text-align: center;
+    color: $defaultColor;
+    transition: color 0.1s linear;
+  }
+
   .isPlaying {
     .beat {
       background-color: lighten( $defaultColor, 10% );
+
+      &.active {
+        background-color: white;
+      }
     }
 
-    .beat.active {
-      background-color: white;
+    .number {
+      color: lighten( $defaultColor, 10% );
     }
   }
 }

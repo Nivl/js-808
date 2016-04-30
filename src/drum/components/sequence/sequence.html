@@ -1,11 +1,12 @@
 
 <div class="wrapper">
 
-  <div *ngFor="#step of currentSequence.steps" [ngClass]="{isPlaying: step.isPlaying}" class="collumn">
+  <div *ngFor="#step of currentSequence.steps; #i = index" [ngClass]="{isPlaying: step.isPlaying}" class="collumn">
     <div (click)="step.kick.toggle()" [ngClass]="{active: step.kick.isEnabled}" class="beat kick"></div>
     <div (click)="step.snare.toggle()" [ngClass]="{active: step.snare.isEnabled}" class="beat snare"></div>
     <div (click)="step.hhOpen.toggle()" [ngClass]="{active: step.hhOpen.isEnabled}" class="beat hhOpen"></div>
     <div (click)="step.hhClose.toggle()" [ngClass]="{active: step.hhClose.isEnabled}" class="beat hhClose"></div>
+    <div class="number">{{ i + 1 }}</div>
   </div>
 
 </div>
