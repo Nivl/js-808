@@ -1,26 +1,23 @@
 
-<p>
-  <i (click)="play()" class="fa fa-play" *ngIf="!isPlaying"></i>
-  <i (click)="pause()" class="fa fa-pause" *ngIf="isPlaying"></i>
-  <i (click)="stop()" class="fa fa-stop"></i>
-</p>
+<div class="actionBar">
+  <span class="playActions">
+    <i (click)="play()" class="fa fa-play" *ngIf="!isPlaying"></i>
+    <i (click)="pause()" class="fa fa-pause" *ngIf="isPlaying"></i>
+    <i (click)="stop()" class="fa fa-stop"></i>
+  </span>
 
-<p>
-  <i (click)="addSteps()" class="fa fa-plus"></i>
-  <i (click)="removeSteps()" class="fa fa-minus"></i>
-</p>
+  <span class="stepActions">
+    <i (click)="addSteps()" class="fa fa-plus"></i>
+    <i (click)="removeSteps()" class="fa fa-minus"></i>
+  </span>
 
-<form>
-  <p>
+  <form class="formActions">
     <input type="number" (change)="updateBpm($event.target.value)" min="60" max="240" value="{{ currentBpm }}" /> BPM
-  </p>
 
-  <p>
     <select (change)="switchSequence($event.target.value)">
       <option>Sequences</option>
       <option *ngFor="#num of sequenceList">{{ num }}</option>
     </select>
-  </p>
-</form>
-
+  </form>
+</div>
 <ml-drum-sequence></ml-drum-sequence>

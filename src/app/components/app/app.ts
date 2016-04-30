@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import DrumComponent from '../../../drum/components/drum/drum';
 
+import 'normalize.css';
 import './app.scss';
 import 'font-awesome/css/font-awesome.min.css'
 

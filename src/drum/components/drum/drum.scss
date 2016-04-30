@@ -1,0 +1,37 @@
+
+ml-drum {
+  font-size: 12px;
+
+  .actionBar {
+    margin-left: 2px;
+    margin-bottom: 20px;
+
+    input[type="number"] {
+      background-color: #2a2d30;
+      border: 1px solid #3a3d40;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .playActions,
+    .stepActions {
+      margin-right: 10px;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .formActions {
+      display: inline;
+
+      select {
+        margin-left: 10px;
+        border: 1px solid #3a3d40;
+        background: #2a2d30;
+        color: #fff;
+        border-radius: 5px;
+      }
+    }
+  }
+}
