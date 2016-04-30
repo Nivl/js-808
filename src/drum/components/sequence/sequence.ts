@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {NgClass} from 'angular2/common';
 
 import Sequence from '../../models/sequence';
+import DrumService from '../../services/drum';
 
 import './sequence.scss';
 
@@ -14,8 +15,12 @@ export default class SequenceComponent {
   currentSequence: Sequence;
   sequenceList: string[] = ['one', 'two', 'three'];
 
-  constructor() {
+  constructor(drumService: DrumService) {
     this.switchSequence('one');
+
+    drumService.onPlay(this.play.bind(this));
+    drumService.onPause(this.pause.bind(this));
+    drumService.onStop(this.stop.bind(this));
   }
 
   addSteps() {
