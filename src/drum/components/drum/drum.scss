@@ -11,6 +11,9 @@ ml-drum {
       border: 1px solid #3a3d40;
       color: #fff;
       border-radius: 5px;
+      padding-left: 8px;
+      position: relative;
+      top: -2px;
     }
 
     .playActions,
@@ -31,6 +34,8 @@ ml-drum {
         background: #2a2d30;
         color: #fff;
         border-radius: 5px;
+        position: relative;
+        top: -2px;
       }
     }
   }
