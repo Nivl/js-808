@@ -27,9 +27,7 @@ export default class DrumComponent {
   }
 
   updateBpm(value: number) {
-    if (value >= 60 && value <= 240) {
-      this.currentSequence.bpm = value;
-    }
+    this.currentSequence.bpm = value;
   }
 
   switchSequence(num: string) {

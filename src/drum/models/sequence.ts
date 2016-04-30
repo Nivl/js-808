@@ -1,11 +1,36 @@
 import {Step, IStepOptions} from './step';
 
 export default class Sequence {
-  bpm: number = 60;
-  steps: Step[] = [];
-  isPlaying: boolean = false;
-  private currentStep: number = -1;
-  private maxNumberOfSteps: number = 32;
+  private _steps: Step[] = [];
+  private _isPlaying: boolean = false;
+  private _bpm: number = 60;
+  private _currentStep: number = -1;
+
+  get steps(): Step[] {
+    return this._steps;
+  }
+
+  get currentStep(): number {
+    return this._currentStep;
+  }
+
+  get isPlaying(): boolean {
+    return this._isPlaying;
+  }
+
+  get maxNumberOfSteps(): number {
+    return 32;
+  }
+
+  get bpm(): number {
+    return this._bpm;
+  }
+
+  set bpm(value: number) {
+    if (value >= 60 && value <= 240) {
+      this._bpm = value;
+    }
+  }
 
   /**
    * Create a new Sequence.
@@ -16,11 +41,11 @@ export default class Sequence {
   constructor(steps: IStepOptions[] = []) {
     if (steps.length === 0) {
       for (let i = 0; i < 4 * 4; i++) {
-        this.steps.push(new Step());
+        this._steps.push(new Step());
       }
     } else if (this.isValid(steps)) {
       for (let elem of steps) {
-        this.steps.push(new Step(elem));
+        this._steps.push(new Step(elem));
       }
     } else {
       throw new Error('The sequence provided has the wrong format');
@@ -28,24 +53,23 @@ export default class Sequence {
   }
 
   addEmptySteps() {
-    if (this.steps.length / 4 < this.maxNumberOfSteps) {
-      const numberToAdd = this.steps.length;
+    if (this._steps.length / 4 < this.maxNumberOfSteps) {
+      const numberToAdd = this._steps.length;
 
       for (let i = 0; i < numberToAdd; i++) {
-        console.log(i);
-        this.steps.push(new Step());
+        this._steps.push(new Step());
       }
     }
   }
 
   removeSteps() {
-    if (this.steps.length / 4 > 4) {
-      this.steps.splice(-(this.steps.length/2));
+    if (this._steps.length / 4 > 4) {
+      this._steps.splice(-(this._steps.length/2));
     }
   }
 
   isValid(steps: IStepOptions[] = null): boolean {
-    const toCheck: IStepOptions[] = steps || this.steps;
+    const toCheck: IStepOptions[] = steps || this._steps;
 
     return (
       (toCheck.length >= 4 * 4) &&
@@ -55,8 +79,8 @@ export default class Sequence {
   }
 
   play() {
-    if (this.isPlaying === false && this.isValid()) {
-      this.isPlaying = true;
+    if (this._isPlaying === false && this.isValid()) {
+      this._isPlaying = true;
       // We clean the UI to clear the Pause mark
       this.cleanStepUI();
       // We bump the step to avoid replaying the same beat on pause/play
@@ -66,31 +90,31 @@ export default class Sequence {
   }
 
   stop() {
-    this.isPlaying = false;
+    this._isPlaying = false;
     this.cleanStepUI();
-    this.currentStep = -1;
+    this._currentStep = -1;
   }
 
   pause() {
-    this.isPlaying = false;
+    this._isPlaying = false;
   }
 
   private bumpCurrentStep() {
-    this.currentStep = (this.currentStep + 1 < this.steps.length) ? (this.currentStep + 1) : (0);
+    this._currentStep = (this._currentStep + 1 < this._steps.length) ? (this._currentStep + 1) : (0);
   }
 
   private cleanStepUI() {
-    if (this.currentStep >= 0 && this.currentStep < this.steps.length) {
-      this.steps[this.currentStep].isPlaying = false;
+    if (this._currentStep >= 0 && this._currentStep < this._steps.length) {
+      this._steps[this._currentStep].isPlaying = false;
     }
   }
 
   private playNextStep() {
     const waitTime = ((60 / this.bpm) / 4) * 1000;
-    this.steps[this.currentStep].play();
+    this._steps[this._currentStep].play();
 
     setTimeout(() => {
-      if (this.isPlaying) {
+      if (this._isPlaying) {
         this.cleanStepUI();
         this.bumpCurrentStep();
         this.playNextStep();
